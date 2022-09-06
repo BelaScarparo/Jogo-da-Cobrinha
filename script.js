@@ -47,6 +47,13 @@ function iniciarJogo(){
     if (snake[0].y < 0 && direction == "up") snake[0].y = 16 * box;
     /* aqui é para a cobrinha não ir embora para o infinito e retornar na tela */
 
+    for(i =1; i< snake.length; i++){
+        if (snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+            clearInterval(jogo); /*para a funçÕ JOGO */
+            alert('Game Over :(');
+        }
+    }
+
     criarBG();
     criarCobrinha(); /*criou a cobrinha*/
     drawFood(); /*criou a comidinha*/
